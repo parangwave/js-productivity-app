@@ -1,9 +1,11 @@
 @import "reset.css";
+@import "variable.css";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Playfair+Display:wght@400;700&display=swap");
 
 body {
   font-family: "Playfair Display", serif;
-  background-color: #2c3e50;
+  background-color: var(--base-color);
+  color: var(--base-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,31 +14,60 @@ body {
 
 h1 {
   font-size: 7rem;
-  margin-top: 3rem;
+  padding: 3rem 0;
 }
 
 h4 {
   font-size: 4rem;
-  margin: 3rem 0;
+  margin: 1.5rem 0 2rem 0;
 }
 
 h1,
-h4,
-li,
-button {
-  background: -webkit-linear-gradient(45deg, #11998e, #f7b733, #f46b45);
+h4 {
+  background: linear-gradient(45deg, #ff5f6d, #e55d87, #32add6, #2657eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* for Firefox  */
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
 
-.nightFont {
-  background: linear-gradient(45deg, #f7797d, #ffd89b, #19547b);
+.otherColorFont {
+  background: linear-gradient(45deg, #00416a, #11998e, #f7b733, #f46b45);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* for Firefox  */
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+input {
+  margin: 2rem;
+  color: var(--base-color);
+  background-color: transparent;
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--base-color);
+  transition: border-bottom 0.5s ease-in-out;
+}
+
+input:focus {
+  border-bottom: solid var(--active-color);
+}
+
+input::placeholder {
+  color: var(--base-colors);
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* for Firefox  */
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: transparent;
 }
 
 li {
@@ -47,9 +78,18 @@ li {
 }
 
 button {
-  border-radius: 30%;
-  width: 25px;
+  font-size: 1rem;
+  font-weight: 800;
+  background-color: (255, 255, 255, 0.5);
+  color: var(--base-color);
   margin-right: 1rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
+}
+
+button:hover {
+  color: var(--active-color);
 }
 
 .form,

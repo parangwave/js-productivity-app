@@ -1,9 +1,6 @@
 const body = document.querySelector("body"),
     h1 = document.querySelector("h1"),
-    h4 = document.querySelector("h4"),
-    li = document.querySelector("li"),
-    btn = document.querySelector("button");
-
+    h4 = document.querySelector("h4");
 const IMG_NUMBER = 6;
 
 function genRandom() {
@@ -19,16 +16,13 @@ function paintImage(imgNumber) {
 }
 
 function changeFontColor(imgNumber) {
-    if ( (imgNumber + 1) < 5) {
-        h1.classList.remove("nightFont");
-        h4.classList.remove("nightFont");
-        li.classList.remove("nightFont");
-        btn.classList.remove("nightFont");
+    halfRange = Math.floor(IMG_NUMBER / 2);
+    if ( (imgNumber + 1) <= halfRange) {
+        h1.classList.add("otherColorFont");
+        h4.classList.add("otherColorFont");
     } else {
-        h1.classList.add("nightFont");
-        h4.classList.add("nightFont");
-        li.classList.add("nightFont");
-        btn.classList.add("nightFont");
+        h1.classList.remove("otherColorFont");
+        h4.classList.remove("otherColorFont");
     }
 }
 

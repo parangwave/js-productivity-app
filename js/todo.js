@@ -29,7 +29,7 @@ function createToDo(text) {
     const newId = idNumbers;
     idNumbers += 1;
     
-    delBtn.innerText = "✖";
+    delBtn.innerText = "X";
     delBtn.addEventListener("click", deleteToDo);
     span.innerText = text;
     li.appendChild(delBtn);
