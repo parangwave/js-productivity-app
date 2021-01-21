@@ -1,9 +1,9 @@
 @import "reset.css";
 @import "variable.css";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Fraunces:wght@700&display=swap");
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "Bodoni Moda", serif;
   background-color: var(--base-color);
   color: var(--base-color);
   display: flex;
@@ -12,19 +12,27 @@ body {
   align-items: center;
 }
 
-h1 {
+.js-clock > h1 {
   font-size: 7rem;
   padding: 3rem 0;
 }
 
-h4 {
+/* h4 */
+.js-greetings {
   font-size: 4rem;
-  margin: 1.5rem 0 2rem 0;
+  margin: 1.5rem;
+}
+
+/* span */
+.js-weather {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 h1,
-h4 {
-  background: linear-gradient(45deg, #ff5f6d, #e55d87, #32add6, #2657eb);
+.js-greetings,
+.js-weather {
+  background: linear-gradient(45deg, #32add6, #c6ffdd, #fbd786, #f7797d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* for Firefox  */
@@ -42,17 +50,18 @@ h4 {
 }
 
 input {
-  margin: 2rem;
+  margin: 1.5rem 0;
   color: var(--base-color);
   background-color: transparent;
   font-size: 2rem;
   text-align: center;
   border-bottom: 3px solid var(--base-color);
-  transition: border-bottom 0.5s ease-in-out;
+  transition: border-bottom 0.3s ease-in-out;
 }
 
 input:focus {
   border-bottom: solid var(--active-color);
+  color: var(--active-color);
 }
 
 input::placeholder {
@@ -73,13 +82,18 @@ textarea:focus::-moz-placeholder {
 li {
   font-size: 1.5rem;
   display: flex;
-  margin: 1rem;
-  font-weight: 600;
+  margin: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 button {
   font-size: 1rem;
-  font-weight: 800;
   background-color: (255, 255, 255, 0.5);
   color: var(--base-color);
   margin-right: 1rem;
