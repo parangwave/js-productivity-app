@@ -19,7 +19,7 @@ function paintImage(imgNumber) {
 
 function changeFontColor(imgNumber) {
     halfRange = Math.floor(IMG_NUMBER / 2);
-    if ( (imgNumber) <= halfRange) {
+    if ( (imgNumber) <= halfRange - 1) {
         clock.classList.add("otherColorFont");
         userName.classList.add("otherColorFont");
         weatherSpan.classList.add("otherColorFont");

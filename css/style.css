@@ -20,7 +20,7 @@ body {
 /* h4 */
 .js-greetings {
   font-size: 4rem;
-  margin: 1.5rem;
+  padding: 1.5rem;
 }
 
 /* span */
@@ -32,7 +32,7 @@ body {
 h1,
 .js-greetings,
 .js-weather {
-  background: linear-gradient(45deg, #32add6, #c6ffdd, #fbd786, #f7797d);
+  background: linear-gradient(45deg, #4cb8c4, #c6ffdd, #fbd786, #f7797d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* for Firefox  */
