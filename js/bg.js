@@ -3,23 +3,44 @@ const body = document.querySelector("body"),
     userName = document.querySelector(".js-greetings"),
     weatherSpan = document.querySelector(".js-weather");
 
-const IMG_NUMBER = 8;
+const IMG_NUMBER = 9;
 
-function genRandom() {
-    const number = Math.floor(Math.random() * IMG_NUMBER) + 1;
-    return number;
+function getHours() {
+    let time = getTime();
+    return time;
 }
 
-function paintImage(imgNumber) {
+function paintImage(time) {
+    const day = (IMG_NUMBER / 3),
+        night = IMG_NUMBER,
+        afternoon = day * 2,
+        afternoonBegin =  afternoon - 2,
+        afternoonEnd =  afternoon + 1;
     const image = new Image();
-    image.src = `images/${imgNumber}.PNG`;
-    image.classList.add('bgImage');
-    body.prepend(image);
+    
+    if (time > 7 && time < 16) {
+        imgNumber = Math.round(Math.random() *  (day - 1)) + 1;
+        image.src = `images/${imgNumber}.PNG`;
+        image.classList.add('bgImage');
+        body.prepend(image);
+        console.log(imgNumber);
+    } else if (time >= 16 && time < 19) {
+        imgNumber = Math.round(Math.random() * (afternoon - afternoonBegin)) + afternoonBegin;
+        image.src = `images/${imgNumber}.PNG`;
+        image.classList.add('bgImage');
+        body.prepend(image);
+        console.log(imgNumber);
+    } else {
+        imgNumber = Math.round(Math.random() * (night - afternoonEnd)) + afternoonEnd;
+        image.src = `images/${imgNumber}.PNG`;
+        image.classList.add('bgImage');
+        body.prepend(image);
+        console.log(imgNumber);
+    }
 }
 
-function changeFontColor(imgNumber) {
-    halfRange = Math.floor(IMG_NUMBER / 2);
-    if ( (imgNumber) <= halfRange - 1) {
+function changeFontColor(time) {
+    if (time > 7 && time < 16) {
         clock.classList.add("otherColorFont");
         userName.classList.add("otherColorFont");
         weatherSpan.classList.add("otherColorFont");
@@ -31,9 +52,9 @@ function changeFontColor(imgNumber) {
 }
 
 function init() {
-    const randomNumber = genRandom();
-    paintImage(randomNumber);
-    changeFontColor(randomNumber);
+    const number = getHours();
+    paintImage(number);
+    changeFontColor(number);
 }
 
 init();
