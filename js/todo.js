@@ -38,8 +38,8 @@ function createToDo(text) {
     toDoList.appendChild(li);
 
     const toDoObj = {
-        text: text,
-        id: newId
+        id: newId,
+        text: text
     };
     toDos.push(toDoObj);
     saveToDos();
@@ -62,9 +62,17 @@ function loadToDos() {
     }
 }
 
+function showAlert(event) {
+    alert("Get a task done and add more!");
+}
+
 function init() {
     loadToDos();
-    toDoform.addEventListener("submit", handleSubmit)
+    if (toDos.length <= 3) {
+        toDoform.addEventListener("submit", handleSubmit);
+    } else {
+        toDoform.addEventListener("submit", showAlert);
+    }
 }
 
 init();
