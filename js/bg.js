@@ -23,19 +23,16 @@ function paintImage(time) {
         image.src = `images/${imgNumber}.PNG`;
         image.classList.add('bgImage');
         body.prepend(image);
-        console.log(imgNumber);
     } else if (time >= 16 && time < 19) {
         imgNumber = Math.round(Math.random() * (afternoon - afternoonBegin)) + afternoonBegin;
         image.src = `images/${imgNumber}.PNG`;
         image.classList.add('bgImage');
         body.prepend(image);
-        console.log(imgNumber);
     } else {
         imgNumber = Math.round(Math.random() * (night - afternoonEnd)) + afternoonEnd;
         image.src = `images/${imgNumber}.PNG`;
         image.classList.add('bgImage');
         body.prepend(image);
-        console.log(imgNumber);
     }
 }
 

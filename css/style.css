@@ -26,7 +26,7 @@ body {
 /* h4 */
 .js-greetings {
   font-size: 4rem;
-  padding: 1.6rem;
+  padding: 1.4rem;
 }
 
 h1,
@@ -50,7 +50,7 @@ h1,
 }
 
 input {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   color: var(--base-color);
   background-color: transparent;
   font-size: 2rem;
