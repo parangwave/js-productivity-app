@@ -68,7 +68,7 @@ function showAlert(event) {
 
 function init() {
     loadToDos();
-    if (toDos.length <= 3) {
+    if (toDos.length <= 4) {
         toDoform.addEventListener("submit", handleSubmit);
     } else {
         toDoform.addEventListener("submit", showAlert);
