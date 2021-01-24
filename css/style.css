@@ -150,7 +150,7 @@ div.no-portrait {
   top: 0;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (min-width: 1024px) {
   div.no-mobile {
     display: none;
   }
